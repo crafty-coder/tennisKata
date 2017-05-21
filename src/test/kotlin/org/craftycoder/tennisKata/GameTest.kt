@@ -76,6 +76,7 @@ class GameTest {
         game.addPointToPlayer1()
         game.addPointToPlayer1()
         game.addPointToPlayer1()
+
         game.addPointToPlayer2()
         game.addPointToPlayer2()
         game.addPointToPlayer2()
@@ -89,11 +90,13 @@ class GameTest {
 
         game.addPointToPlayer1()
         game.addPointToPlayer1()
-        game.addPointToPlayer1()
-        game.addPointToPlayer1()
 
         game.addPointToPlayer2()
         game.addPointToPlayer2()
+
+        game.addPointToPlayer1()
+        game.addPointToPlayer1()
+
         game.addPointToPlayer2()
 
         assertEquals("Advantage Player1",game.getScore())
@@ -112,6 +115,32 @@ class GameTest {
         assertEquals("Advantage Player2",game2.getScore())
 
     }
+
+    @Test fun score_should_be_win_for_when_a_player_more_than_four_points_and_difference_with_the_other_player_is_more_than_one() {
+
+        val game = Game()
+
+        game.addPointToPlayer1()
+        game.addPointToPlayer1()
+        game.addPointToPlayer1()
+        game.addPointToPlayer1()
+        game.addPointToPlayer1()
+
+        assertEquals("Win for Player1",game.getScore())
+
+        val game2 = Game()
+
+        game2.addPointToPlayer2()
+        game2.addPointToPlayer2()
+        game2.addPointToPlayer2()
+        game2.addPointToPlayer2()
+        game2.addPointToPlayer2()
+
+        assertEquals("Win for Player2",game2.getScore())
+
+    }
+
+
 
 
 

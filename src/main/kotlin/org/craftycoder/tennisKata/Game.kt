@@ -9,13 +9,16 @@ class Game {
 
     fun getScore(): String =
 
-            if (playerOnePoints + playerTwoPoints < 6) {
+            if (playerOnePoints < 4 && playerTwoPoints < 4 && playerOnePoints + playerTwoPoints < 6) {
                 if (playerOnePoints == playerTwoPoints) "${pointsToScore(playerOnePoints)}-All"
                 else pointsToScore(playerOnePoints) + "-" + pointsToScore(playerTwoPoints)
             } else {
                 if (playerOnePoints == playerTwoPoints) "Deuce"
-                else if (playerOnePoints > playerTwoPoints) "Advantage Player1"
-                else "Advantage Player2"
+                else {
+                    val player = if (playerOnePoints > playerTwoPoints) "Player1" else "Player2"
+                    if (playerOnePoints - playerTwoPoints == 1) "Advantage $player" else "Win for $player"
+                }
+
             }
 
 
