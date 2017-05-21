@@ -7,8 +7,9 @@ class Game {
 
     fun getScore(): String =
             if (!playerOneScore && !playerTwoScore) "Love-All"
-            else if (playerOneScore) "Fifteen-Love"
-            else "Love-Fifteen"
+            else if (playerOneScore && !playerTwoScore) "Fifteen-Love"
+            else if (playerTwoScore && !playerOneScore) "Love-Fifteen"
+            else "Fifteen-All"
 
     fun addPointToPlayer1() {
         playerOneScore = true
