@@ -16,7 +16,7 @@ class Game {
                 if (playerOnePoints == playerTwoPoints) "Deuce"
                 else {
                     val player = if (playerOnePoints > playerTwoPoints) "Player1" else "Player2"
-                    if (playerOnePoints - playerTwoPoints == 1) "Advantage $player" else "Win for $player"
+                    if (Math.abs(playerOnePoints - playerTwoPoints) == 1) "Advantage $player" else "Win for $player"
                 }
 
             }
