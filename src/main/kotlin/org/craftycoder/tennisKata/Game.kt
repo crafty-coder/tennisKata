@@ -9,12 +9,11 @@ class Game {
 
     fun getScore(): String =
             if (playerOnePoints == 0 && playerTwoPoints == 0) "Love-All"
-            else if (playerOnePoints == 1 && playerTwoPoints == 0) pointsToScore(playerOnePoints) + "-" + pointsToScore(playerTwoPoints)
-            else if (playerTwoPoints == 1 && playerOnePoints == 0) "Love-Fifteen"
-            else "Fifteen-All"
+            else if (playerTwoPoints == 1 && playerOnePoints == 1) "Fifteen-All"
+            else pointsToScore(playerOnePoints) + "-" + pointsToScore(playerTwoPoints)
 
     fun addPointToPlayer1() {
-        playerOnePoints = 1
+        playerOnePoints += 1
     }
 
     fun addPointToPlayer2() {
