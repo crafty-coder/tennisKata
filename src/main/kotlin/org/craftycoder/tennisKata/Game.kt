@@ -8,9 +8,16 @@ class Game {
     private var playerTwoPoints = 0
 
     fun getScore(): String =
-            if (playerOnePoints == playerTwoPoints && playerOnePoints < 3) "${pointsToScore(playerOnePoints)}-All"
-            else if (playerOnePoints == playerTwoPoints) "Deuce"
-            else pointsToScore(playerOnePoints) + "-" + pointsToScore(playerTwoPoints)
+
+            if (playerOnePoints + playerTwoPoints < 6) {
+                if (playerOnePoints == playerTwoPoints) "${pointsToScore(playerOnePoints)}-All"
+                else pointsToScore(playerOnePoints) + "-" + pointsToScore(playerTwoPoints)
+            } else {
+                if (playerOnePoints == playerTwoPoints) "Deuce"
+                else if (playerOnePoints > playerTwoPoints) "Advantage Player1"
+                else "Advantage Player2"
+            }
+
 
     fun addPointToPlayer1() {
         playerOnePoints += 1

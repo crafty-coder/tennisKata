@@ -66,5 +66,36 @@ class GameTest {
 
     }
 
+    @Test fun score_should_be_advantage_when_the_point_difference_is_One_and_each_player_got_at_least_3_points() {
+
+        val game = Game()
+
+        game.addPointToPlayer1()
+        game.addPointToPlayer1()
+        game.addPointToPlayer1()
+        game.addPointToPlayer1()
+
+        game.addPointToPlayer2()
+        game.addPointToPlayer2()
+        game.addPointToPlayer2()
+
+        assertEquals("Advantage Player1",game.getScore())
+
+        val game2 = Game()
+
+        game2.addPointToPlayer1()
+        game2.addPointToPlayer1()
+        game2.addPointToPlayer1()
+
+        game2.addPointToPlayer2()
+        game2.addPointToPlayer2()
+        game2.addPointToPlayer2()
+        game2.addPointToPlayer2()
+
+        assertEquals("Advantage Player2",game2.getScore())
+
+    }
+
+
 
 }
