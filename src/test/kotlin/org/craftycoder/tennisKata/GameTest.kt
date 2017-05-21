@@ -30,11 +30,11 @@ class GameTest {
         assertEquals("Fifteen-All", game.getScore())
     }
 
-    @Ignore fun score_should_be_Thirty_Love_when_playerOne_scores_his_two_first_points_in_a_row() {
-        val game = Game()
-        game.addPointToPlayer1()
-        game.addPointToPlayer1()
-        assertEquals("Thirty-Love", game.getScore())
-    }
+//    @Test fun score_should_be_Thirty_Love_when_playerOne_scores_his_two_first_points_in_a_row() {
+//        val game = Game()
+//        game.addPointToPlayer1()
+//        game.addPointToPlayer1()
+//        assertEquals("Thirty-Love", game.getScore())
+//    }
 
 }
