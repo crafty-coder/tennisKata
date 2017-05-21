@@ -1,7 +1,12 @@
 package org.craftycoder.tennisKata
 
-class Game(val player1Name: String, val player2Name: String) {
-    fun getScore(): String = "Love-All"
+class Game {
 
+    private var score = false
 
+    fun getScore(): String = if (!score) "Love-All" else "Fifteen-Love"
+
+    fun addPointToPlayer1() {
+        score = true
+    }
 }
