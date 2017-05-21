@@ -17,7 +17,7 @@ class Game {
     }
 
     fun addPointToPlayer2() {
-        playerTwoPoints = 1
+        playerTwoPoints += 1
     }
 
     private fun pointsToScore(score: Int): String {
