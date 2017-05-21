@@ -17,5 +17,11 @@ class GameTest {
         assertEquals("Fifteen-Love", game.getScore())
     }
 
+    @Test fun score_should_be_love_fifteen_when_playerTwo_scores_first_point() {
+        val game = Game()
+        game.addPointToPlayer2()
+        assertEquals("Love-Fifteen", game.getScore())
+    }
+
 
 }
