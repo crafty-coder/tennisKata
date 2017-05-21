@@ -8,8 +8,8 @@ class Game {
     private var playerTwoPoints = 0
 
     fun getScore(): String =
-            if (playerOnePoints == 0 && playerTwoPoints == 0) "Love-All"
-            else if (playerTwoPoints == 1 && playerOnePoints == 1) "Fifteen-All"
+            if (playerOnePoints == playerTwoPoints && playerOnePoints < 3) "${pointsToScore(playerOnePoints)}-All"
+            else if (playerOnePoints == playerTwoPoints) "Deuce"
             else pointsToScore(playerOnePoints) + "-" + pointsToScore(playerTwoPoints)
 
     fun addPointToPlayer1() {

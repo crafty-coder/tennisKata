@@ -44,4 +44,27 @@ class GameTest {
         assertEquals("Love-Thirty", game.getScore())
     }
 
+    @Test fun score_should_be_Thirty_All_when_both_players_got_two_points_each() {
+        val game = Game()
+        game.addPointToPlayer1()
+        game.addPointToPlayer1()
+        game.addPointToPlayer2()
+        game.addPointToPlayer2()
+        assertEquals("Thirty-All", game.getScore())
+    }
+
+    @Test fun score_should_be_deuce_when_both_players_got_the_same_points_and_more_than_3_points() {
+
+        val game = Game()
+        game.addPointToPlayer1()
+        game.addPointToPlayer1()
+        game.addPointToPlayer1()
+        game.addPointToPlayer2()
+        game.addPointToPlayer2()
+        game.addPointToPlayer2()
+        assertEquals("Deuce", game.getScore())
+
+    }
+
+
 }
