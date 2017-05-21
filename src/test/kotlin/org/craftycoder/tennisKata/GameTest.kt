@@ -44,6 +44,23 @@ class GameTest {
         assertEquals("Love-Thirty", game.getScore())
     }
 
+    @Test fun score_should_be_Forty_Love_when_playerOne_scores_his_two_first_points_in_a_row() {
+        val game = Game()
+        game.addPointToPlayer1()
+        game.addPointToPlayer1()
+        game.addPointToPlayer1()
+        assertEquals("Forty-Love", game.getScore())
+    }
+
+    @Test fun score_should_be_Love_Forty_when_playerTwo_scores_his_two_first_points_in_a_row() {
+        val game = Game()
+        game.addPointToPlayer2()
+        game.addPointToPlayer2()
+        game.addPointToPlayer2()
+        assertEquals("Love-Forty", game.getScore())
+    }
+
+
     @Test fun score_should_be_Thirty_All_when_both_players_got_two_points_each() {
         val game = Game()
         game.addPointToPlayer1()
